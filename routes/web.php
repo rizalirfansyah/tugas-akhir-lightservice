@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-use function Ramsey\Uuid\v1;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +16,7 @@ use function Ramsey\Uuid\v1;
 */
 
 Route::get('/', function () {
-    return view('check-status');
+    return view('landing.check-status');
 });
 
 Route::middleware([
@@ -27,4 +27,8 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    Route::get('/home.dashboard', [LoginController::class, 'index'])->name('home.dashboard')->middleware('auth');
+    Route::get('/register', [LoginController::class, 'register'])->name('register');
 });
+
+// Route::get('/redirects', 'App\Http\Controllers\LoginController@index')->middleware('auth');

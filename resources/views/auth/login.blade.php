@@ -1,5 +1,4 @@
-@extends('partials.navbar')
-
+@extends('landing.navbar')
 
 <title>Light Service | Login</title>
 
