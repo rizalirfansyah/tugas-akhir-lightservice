@@ -7,6 +7,8 @@ module.exports = {
         './vendor/laravel/jetstream/**/*.blade.php',
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
+        "./src/**/*.{html,js}",
+        "./node_modules/tw-elements/dist/js/**/*.js"
     ],
 
     theme: {
@@ -35,6 +37,9 @@ module.exports = {
         },
     },
 
-    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography'), require("daisyui")]
+  plugins: [require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require("daisyui"),
+    require('flowbite/plugin'),
+    require("tw-elements/dist/plugin")],
 };
-
