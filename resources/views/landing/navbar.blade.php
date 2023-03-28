@@ -20,7 +20,7 @@
         </div>
         <div class="navbar-end hidden lg:flex">
           <ul class="menu menu-horizontal px-1">
-            <li><a>Check Status</a></li>
+            <li><a href="/">Check Status</a></li>
             <li tabindex="0">
               @if (Route::has('login'))
                 @auth
@@ -32,6 +32,7 @@
                     {{-- @if (Route::has('register'))
                         <a href="{{ route('register') }}" class="text-md">Register</a>
                     @endif --}}
+                    
                 @endauth
               @endif
             </li>

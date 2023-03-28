@@ -62,7 +62,7 @@
       <!-- Header -->
 
       
-      @include('role.layouts.side-bar')
+     
 
 
 <!-- ./External resources -->

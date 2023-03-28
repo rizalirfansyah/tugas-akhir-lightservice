@@ -1,1 +1,1 @@
-<img src="img/logoweb.png" alt="" class="mx-auto h-10 w-12">
+<img src="img/opsianakmuda.png" alt="" class="mx-auto h-8 w-10">

@@ -49,7 +49,7 @@
            object-center absolute brightness-50">
         </div>
 
-        <div class=" lg:w-96 md:w-80 sm:w-80 max-h-screen w-72 mx-auto left-0 top-60 md:top-72 bg-transparent rounded-md shadow-lg relative">
+        <div class="lg:w-96 md:w-80 sm:w-80 max-h-screen w-72 mx-auto left-0 top-60 md:top-72 bg-transparent rounded-md shadow-lg relative">
           <h2 class="text-center text-white font-semibold mb-6 font-inter pt-6 text-2xl mx-auto">Check Your Gadget Here</h2>
           
           <form action="">

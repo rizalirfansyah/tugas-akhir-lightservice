@@ -7,7 +7,7 @@
     <div class="mt-12">
     <x-authentication-card>
         <img src="img/logoweb.png" alt="" class="w-36 mx-auto">
-
+        
         <x-slot name="logo">
             {{-- <x-authentication-card-logo /> --}}
         </x-slot>

@@ -16,7 +16,7 @@ class LoginController extends Controller
 
         $is_admin=Auth::user()->is_admin;
 
-        if($is_admin=='1')
+        if($is_admin=='0')
         {
             return view('home.adminDashboard');
         }
@@ -28,26 +28,7 @@ class LoginController extends Controller
 
     public function register()
     {
-        $this->authorize('register');
+        // $this->authorize('register');
         return view('auth.register');
-    }
-
-    public function view_account()
-    {
-        $is_admin=Auth::user()->is_admin;
-
-        if($is_admin=='1')
-        {
-            return view('home.accountTable');
-        }
-        else
-        {
-            abort(403, 'Unauthorized action');
-        }
-    }
-
-    public function view_profit()
-    {
-        return view('home.profit');
     }
 }

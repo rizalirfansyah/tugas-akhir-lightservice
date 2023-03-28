@@ -8,5 +8,6 @@
 </head>
 <body>
     <h2>Testing tabel akun</h2>
+    <a href="/">Back to dashboard</a>
 </body>
 </html>
