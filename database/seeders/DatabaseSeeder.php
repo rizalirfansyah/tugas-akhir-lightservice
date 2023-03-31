@@ -20,5 +20,13 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        \App\Models\User::factory()->create([
+            'name' => 'test1',
+            'email' => 'test1@gmail.com',
+            'is_admin' => '0',
+            'password' => bcrypt('12345678'),
+        ]);
+            
     }
 }
