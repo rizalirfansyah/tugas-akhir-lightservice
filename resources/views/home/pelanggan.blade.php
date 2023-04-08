@@ -24,16 +24,14 @@
 
         {{-- Sorting dan tambah pelanggan --}}
             <div class="flex items-center mr-5 ml-2.5">
-                <button type="button" class="p-1.5 lg:p-2.5 -ml-2 bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                <button type="button" class="p-1.5 lg:p-2.5 -ml-2 bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mr-2">
                     <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-5 w-5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0l-3.75-3.75M17.25 21L21 17.25"></path>
                     </svg>
                 </button>
-
-                <button type="button" class="p-1 lg:p-2.5 ml-2 bg-gray-400 rounded-lg border border-blue-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-700 dark:bg-blue-600 dark:hover:bg-gray-700 dark:focus:ring-blue-800 text-xs lg:text-sm md:text-sm sm:text-xs">Tambah pelanggan</button>
                 
             <!-- Modal tambah toggle -->
-            <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+            <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 Tambah Pelanggan
             </button>
             <!-- Main modal tambah pelanggan -->
@@ -57,7 +55,7 @@
                                 </div>
                                 <div>
                                     <label for="notelp" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">No Telepon</label>
-                                    <input type="tel" name="notelp" id="notelp" placeholder="08xx-xxxx-xxxx" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                                    <input type="tel" name="notelp" id="notelp" placeholder="0812-3456-7890" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
                                 </div>
                                 {{-- <div>
                                     <label for="alamat" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alamat</label>
@@ -91,24 +89,24 @@
                     <th class="px-4 py-3 text-center">Pilihan</th>
                     </tr>
                 </thead>
-                <tbody class=" divide-y dark:divide-gray-700 dark:bg-gray-800">
+                <tbody class=" divide-y divide-gray-700 bg-gray-800">
                     @foreach ($pelanggan as $customer)
                     
-                    <tr class="bg-gray-800 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400 text-xs">
+                    <tr class="bg-gray-800 hover:bg-gray-900 text-gray-400 text-xs">
                     <td class="px-4 py-3">{{ $loop->iteration }}</td>
                     <td class="px-4 py-3">{{ $customer->nama_pelanggan }}</td>
                     <td class="px-4 py-3">{{ $customer->notelp }}</td>
                     <td class="px-4 py-3">
-                        <a href="" class="relative inline-flex transititext-primary text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600" data-te-toggle="tooltip" title="whatsapp">
+                        <a href="" class="relative inline-flex transititext-primary text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 text-primary-400 hover:text-primary-500 focus:text-primary-500 active:text-primary-600" data-te-toggle="tooltip" title="whatsapp">
                             <img src="img/homeicon/whatsapp.svg" alt="" class="w-5 h-5">
                         </a>
                     </td>
                     <td class="px-4 py-3">Test alamat</td>
                     <td class="px-4 py-3">{{ $customer->total_servis }}</td>
-                    <td class="px-4 py-3">
-                        <div class="w-30 items-center">
+                    <td class="px-4 py-4">
+                        <div class="w-1 items-center 2xl:flex">
                             {{-- modal ubah data --}}
-                            <button data-modal-target="edit-cust-modal" data-modal-toggle="edit-cust-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+                            <button data-modal-target="edit-cust-modal" data-modal-toggle="edit-cust-modal" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-2 text-center">
                             Ubah
                             </button>
                             <!-- Main modal ubah data pelanggan -->
@@ -120,6 +118,7 @@
                                         <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                                         <span class="sr-only">Close modal</span>
                                     </button>
+                                    
                                     <div class="px-6 py-6 lg:px-8">
                                         <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">Edit Data Pelanggan</h3>
                                         <form class="space-y-6" action="{{ route('pelanggan.update', $customer->id) }}" method="POST">
@@ -146,13 +145,12 @@
                             </div>
                         </div>
 
-                            {{-- button hapus data --}}
-                            <form action="{{ route('pelanggan.destroy', $customer->id ) }}" method="POST">
-                                @csrf
-                                @method('delete')
-                            <button type="submit" class="relative p-0.5 lg:p-1.5 text-white bg-red-700 hover:bg-red-800 rounded-lg border border-red-700 focus:ring-4 focus:ring-red-300 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900 text-xs">Hapus</button>
-                            </form>
-                        </div>
+                        {{-- button hapus data --}}
+                        <form action="{{ route('pelanggan.destroy', $customer->id ) }}" method="POST">
+                            @csrf
+                            @method('delete')
+                        <button class="mt-3 ml-1 px-2 py-2 text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Hapus</button>
+                        </form>
                     </td>
                     </tr>
 
@@ -160,7 +158,7 @@
                 </tbody>
                 </table>
             </div>
-            <div class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
+            <div class="grid px-4 py-3 text-xs font-semibold tracking-wide uppercase border-t border-gray-700 sm:grid-cols-9 text-gray-400 bg-gray-800">
                 <span class="flex items-center col-span-3"></span>
                 <span class="col-span-2"></span>
                 <!-- Pagination -->
@@ -208,6 +206,7 @@
             </div>
             </div>
         </div>
+
         <!-- ./Pelanggan Table -->
 
         {{-- Modal input pelanggan --}}
