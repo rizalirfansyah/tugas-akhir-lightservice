@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pelanggan;
 use App\Http\Requests\StorePelangganRequest;
 use App\Http\Requests\UpdatePelangganRequest;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\DB;
 
 class PelangganController extends Controller
