@@ -47,4 +47,9 @@ class HomeController extends Controller
     {
         return view('home.sudah-diambil');
     }
+
+    public function view_report()
+    {
+        return view('home.report');
+    }
 }

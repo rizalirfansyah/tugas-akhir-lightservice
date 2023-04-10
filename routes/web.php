@@ -35,6 +35,7 @@ Route::middleware([
     Route::get('/home.bisa-diambil', [HomeController::class, 'view_ambil'])->name('home.bisa-diambil')->middleware('auth');
     Route::get('/home.sudah-diambil', [HomeController::class, 'view_sudahambil'])->name('home.sudah-diambil')->middleware('auth');
     Route::get('/home.terima-servis', [HomeController::class, 'view_terima'])->name('home.terima-servis')->middleware('auth');
+    Route::get('/home.report', [HomeController::class, 'view_report'])->name('home.report')->middleware('auth');
     Route::get('/register', [LoginController::class, 'register'])->name('register');
 
     Route::resource('pelanggan', PelangganController::class);
