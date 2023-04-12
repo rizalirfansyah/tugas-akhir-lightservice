@@ -27,6 +27,7 @@ class UpdatePelangganRequest extends FormRequest
         return [
             'nama_pelanggan' => 'required',
             'notelp' => 'required',
+            'alamat' => 'required',
         ];
     }
 }

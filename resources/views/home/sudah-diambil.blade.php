@@ -6,8 +6,9 @@
 
 <div class="h-screen ml-14 mb-10 md:ml-64">
 
+    <h2 class="text-3xl mt-4 items-center text-center text-gray-400">Barang Sudah di Ambil</h2>
     <div class="flex justify-between">
-    {{-- Search bar --}}
+        {{-- Search bar --}}
         <form class="flex items-center pt-4 space-x-1 ml-3">
             <label for="simple-search" class="sr-only">Search</label>
             <div class="relative w-32 lg:w-96 md:w-80 sm:w-72">
@@ -22,137 +23,137 @@
             </button>
         </form>
 
-    {{-- Sorting dan tambah pelanggan --}}
-    <div class="flex items-center mr-5 ml-2.5">
-        <button type="button" class="p-1.5 lg:p-2.5 -ml-2 bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-5 w-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0l-3.75-3.75M17.25 21L21 17.25"></path>
-            </svg>
-        </button>
-    </div>
+        {{-- Sorting dan tambah pelanggan --}}
+        <div class="flex items-center mr-5 ml-2.5">
+            <button type="button" class="p-1.5 lg:p-2.5 -ml-2 bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-5 w-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0l-3.75-3.75M17.25 21L21 17.25"></path>
+                </svg>
+            </button>
+        </div>
     </div>
 
     <!-- Pelanggan Table -->
     <div class="mt-0.5 mx-4">
-    <div class="w-full overflow-hidden rounded-lg shadow-xs">
-    <div class="w-full overflow-x-auto">
-        <table class="w-full">
-        <thead>
-            <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-            <th class="px-4 py-3">#</th>
-            <th class="px-4 py-3">No.Servis</th>
-            <th class="px-4 py-3">Tgl. Terima</th>
-            <th class="px-4 py-3">Pemilik</th>
-            <th class="px-4 py-3">Chat</th>
-            <th class="px-4 py-3">Nama Barang</th>
-            <th class="px-4 py-3">Kelengkapan</th>
-            <th class="px-4 py-3">Data kerusakan</th>
-            <th class="px-4 py-3">Kondisi</th>
-            <th class="px-4 py-3">Biaya</th>
-            <th class="px-4 py-3">Status</th>
-            <th class="px-4 py-3">Tgl. Ambil</th>
-            </tr>
-        </thead>
-        <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-            <tr class="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
-            <td class="px-4 py-3 text-sm">1</td>
-            <td class="px-4 py-3 text-sm">0129529192</td>
-            <td class="px-4 py-3 text-sm">15-01-2021</td>
-            <td class="px-4 py-3 text-sm">Afan Gepeng</td>
-            <td class="px-4 py-3 text-sm items-center">
-                <div class="px-2 py-2 items-center">
-                    <a href="" class="relative inline-flex transititext-primary text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600" data-te-toggle="tooltip" title="whatsapp">
-                        <img src="img/homeicon/whatsapp.svg" alt="" class="w-5 h-5">
-                    </a>
-                </div>
-            </td>
-            <td class="px-4 py-3 text-sm">iPhone XR</td>
-            <td class="px-4 py-3 text-sm">Unit</td>
-            <td class="px-4 py-3 text-sm">Mati total</td>
-            <td class="px-4 py-3 text-xs sm:text-xs">
-                <span class="px-2 py-1 font-semibold leading-tight text-white bg-blue-700 rounded-full items-center text-center"> Selesai </span>
-            </td>
-            <td class="px-4 py-3 text-sm">Rp.850.000</td>
-            <td class="px-4 py-3 text-xs flex mt-9 lg:mt-2 md:mt-9 sm:mt-6">
-                <span class="px-2 py-1 flex font-semibold leading-tight text-white bg-green-500 rounded-full items-center text-center"> Diambil </span>
-            </td>
-            <td class="px-4 py-3">28-03-2021</td>
-            </tr>
+        <div class="w-full overflow-hidden rounded-lg shadow-xs">
+            <div class="w-full overflow-x-auto">
+                <table class="w-full">
+                <thead>
+                    <tr class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+                    <th class="px-4 py-3">#</th>
+                    <th class="px-4 py-3">No.Servis</th>
+                    <th class="px-4 py-3">Tgl. Terima</th>
+                    <th class="px-4 py-3">Pemilik</th>
+                    <th class="px-4 py-3">Chat</th>
+                    <th class="px-4 py-3">Nama Barang</th>
+                    <th class="px-4 py-3">Kelengkapan</th>
+                    <th class="px-4 py-3">Data kerusakan</th>
+                    <th class="px-4 py-3">Kondisi</th>
+                    <th class="px-4 py-3">Biaya</th>
+                    <th class="px-4 py-3">Status</th>
+                    <th class="px-4 py-3">Tgl. Ambil</th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+                    <tr class="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
+                    <td class="px-4 py-3 text-sm">1</td>
+                    <td class="px-4 py-3 text-sm">0129529192</td>
+                    <td class="px-4 py-3 text-sm">15-01-2021</td>
+                    <td class="px-4 py-3 text-sm">Afan Gepeng</td>
+                    <td class="px-4 py-3 text-sm items-center">
+                        <div class="px-2 py-2 items-center">
+                            <a href="" class="relative inline-flex transititext-primary text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600" data-te-toggle="tooltip" title="whatsapp">
+                                <img src="img/homeicon/whatsapp.svg" alt="" class="w-5 h-5">
+                            </a>
+                        </div>
+                    </td>
+                    <td class="px-4 py-3 text-sm">iPhone XR</td>
+                    <td class="px-4 py-3 text-sm">Unit</td>
+                    <td class="px-4 py-3 text-sm">Mati total</td>
+                    <td class="px-4 py-3 text-xs sm:text-xs">
+                        <span class="px-2 py-1 font-semibold leading-tight text-white bg-blue-700 rounded-full items-center text-center"> Selesai </span>
+                    </td>
+                    <td class="px-4 py-3 text-sm">Rp.850.000</td>
+                    <td class="px-4 py-3 text-xs flex mt-9 lg:mt-2 md:mt-9 sm:mt-6">
+                        <span class="px-2 py-1 flex font-semibold leading-tight text-white bg-green-500 rounded-full items-center text-center"> Diambil </span>
+                    </td>
+                    <td class="px-4 py-3">28-03-2021</td>
+                    </tr>
 
-            <tr class="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
-            <td class="px-4 py-3 text-sm">2</td>
-            <td class="px-4 py-3 text-sm">0215192512</td>
-            <td class="px-4 py-3 text-sm">23-03-2021</td>
-            <td class="px-4 py-3 text-sm">Ujang</td>
-            <td class="px-4 py-3 text-sm">
-                <div class="px-2 py-2 items-center">
-                    <a href="" class="relative inline-flex transititext-primary text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600" data-te-toggle="tooltip" title="whatsapp">
-                        <img src="img/homeicon/whatsapp.svg" alt="" class="w-5 h-5">
-                    </a>
-                </div>
-            </td>
-            <td class="px-4 py-3 text-sm">Laptop asus tuf FX505dt</td>
-            <td class="px-4 py-3 text-sm">Unit, adapter</td>
-            <td class="px-4 py-3 text-sm">Single fan, deep cleaning</td>
-            <td class="px-4 py-3 text-xs">
-                <span class="px-2 py-1 font-semibold leading-tight text-white bg-red-700 rounded-full items-center text-center"> Dibatalkan </span>
-            </td>
-            <td class="px-4 py-3 text-sm">Rp.1.250.000</td>
-            <td class="px-4 py-3 text-xs flex mt-9 lg:mt-2 md:mt-9 sm:mt-6">
-                <span class="px-2 py-1 flex font-semibold leading-tight text-white bg-green-500 rounded-full items-center text-center"> Diambil </span>
-            </td>
-            <td class="px-4 py-3">20-01-2021</td>
-            </tr>
-        </tbody>
-        </table>
-    </div>
-    <div class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
-        <span class="flex items-center col-span-3"></span>
-        <span class="col-span-2"></span>
-        <!-- Pagination -->
-        <span class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end">
-        <nav aria-label="Table navigation">
-            <ul class="inline-flex items-center">
-            <li>
-                <button class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple" aria-label="Previous">
-                <svg aria-hidden="true" class="w-4 h-4 fill-current" viewBox="0 0 20 20">
-                    <path d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path>
-                </svg>
-                </button>
-            </li>
-            <li>
-                <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">1</button>
-            </li>
-            <li>
-                <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">2</button>
-            </li>
-            <li>
-                <button class="px-3 py-1 text-white dark:text-gray-800 transition-colors duration-150 bg-blue-600 dark:bg-gray-100 border border-r-0 border-blue-600 dark:border-gray-100 rounded-md focus:outline-none focus:shadow-outline-purple">3</button>
-            </li>
-            <li>
-                <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">4</button>
-            </li>
-            <li>
-                <span class="px-3 py-1">...</span>
-            </li>
-            <li>
-                <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">8</button>
-            </li>
-            <li>
-                <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">9</button>
-            </li>
-            <li>
-                <button class="px-3 py-1 rounded-md rounded-r-lg focus:outline-none focus:shadow-outline-purple" aria-label="Next">
-                <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 20 20">
-                    <path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path>
-                </svg>
-                </button>
-            </li>
-            </ul>
-        </nav>
-        </span>
-    </div>
-    </div>
+                    <tr class="bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-700 dark:text-gray-400">
+                    <td class="px-4 py-3 text-sm">2</td>
+                    <td class="px-4 py-3 text-sm">0215192512</td>
+                    <td class="px-4 py-3 text-sm">23-03-2021</td>
+                    <td class="px-4 py-3 text-sm">Ujang</td>
+                    <td class="px-4 py-3 text-sm">
+                        <div class="px-2 py-2 items-center">
+                            <a href="" class="relative inline-flex transititext-primary text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600" data-te-toggle="tooltip" title="whatsapp">
+                                <img src="img/homeicon/whatsapp.svg" alt="" class="w-5 h-5">
+                            </a>
+                        </div>
+                    </td>
+                    <td class="px-4 py-3 text-sm">Laptop asus tuf FX505dt</td>
+                    <td class="px-4 py-3 text-sm">Unit, adapter</td>
+                    <td class="px-4 py-3 text-sm">Single fan, deep cleaning</td>
+                    <td class="px-4 py-3 text-xs">
+                        <span class="px-2 py-1 font-semibold leading-tight text-white bg-red-700 rounded-full items-center text-center"> Dibatalkan </span>
+                    </td>
+                    <td class="px-4 py-3 text-sm">Rp.1.250.000</td>
+                    <td class="px-4 py-3 text-xs flex mt-9 lg:mt-2 md:mt-9 sm:mt-6">
+                        <span class="px-2 py-1 flex font-semibold leading-tight text-white bg-green-500 rounded-full items-center text-center"> Diambil </span>
+                    </td>
+                    <td class="px-4 py-3">20-01-2021</td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+            <div class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
+                <span class="flex items-center col-span-3"></span>
+                <span class="col-span-2"></span>
+                <!-- Pagination -->
+                <span class="flex col-span-4 mt-2 sm:mt-auto sm:justify-end">
+                <nav aria-label="Table navigation">
+                    <ul class="inline-flex items-center">
+                    <li>
+                        <button class="px-3 py-1 rounded-md rounded-l-lg focus:outline-none focus:shadow-outline-purple" aria-label="Previous">
+                            <svg aria-hidden="true" class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                                <path d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">1</button>
+                    </li>
+                    <li>
+                        <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">2</button>
+                    </li>
+                    <li>
+                        <button class="px-3 py-1 text-white dark:text-gray-800 transition-colors duration-150 bg-blue-600 dark:bg-gray-100 border border-r-0 border-blue-600 dark:border-gray-100 rounded-md focus:outline-none focus:shadow-outline-purple">3</button>
+                    </li>
+                    <li>
+                        <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">4</button>
+                    </li>
+                    <li>
+                        <span class="px-3 py-1">...</span>
+                    </li>
+                    <li>
+                        <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">8</button>
+                    </li>
+                    <li>
+                        <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">9</button>
+                    </li>
+                    <li>
+                        <button class="px-3 py-1 rounded-md rounded-r-lg focus:outline-none focus:shadow-outline-purple" aria-label="Next">
+                            <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 20 20">
+                                <path d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path>
+                            </svg>
+                        </button>
+                    </li>
+                    </ul>
+                </nav>
+                </span>
+            </div>
+        </div>
     </div>
     <!-- ./Pelanggan Table -->
     </div>        

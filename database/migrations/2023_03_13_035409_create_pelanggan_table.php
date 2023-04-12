@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('kode_pelanggan')->nullable();
             $table->string('nama_pelanggan');
             $table->string('notelp');
+            $table->string('alamat');
             $table->integer('proses_servis')->nullable();
             $table->integer('bisa_diambil')->nullable();
             $table->integer('sudah_diambil')->nullable();

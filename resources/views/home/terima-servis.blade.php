@@ -6,7 +6,7 @@
 
 <div class="h-screen ml-14 md:ml-64">
 
-    <h2 class="text-xl mt-4 items-center text-center text-gray-400">Data Servis Masuk</h2>
+    <h2 class="text-3xl mt-4 items-center text-center text-gray-400">Data Servis Masuk</h2>
     <div class="flex justify-between">
         {{-- Search bar --}}
         <form class="flex items-center pt-4 space-x-1 ml-3">

@@ -6,7 +6,7 @@
 
 <div class="h-screen ml-14 md:ml-64">
 
-    <h2 class="text-xl mt-4 items-center text-center text-gray-400 mb-5">Data Pendapatan</h2>
+    <h2 class="text-3xl mt-4 items-center text-center text-gray-400 mb-5">Data Pendapatan</h2>
     
     <div class="flex justify-between mb-2">
         {{-- progress hari ini --}}
@@ -38,51 +38,53 @@
     
     </div>
 
-    {{-- Tabel data servis masuk --}}
+    {{-- Tabel data report harian --}}
        <div class="mt-0.5 mx-4">
            <div class="w-full overflow-hidden rounded-lg shadow-xs">
            <div class="w-full overflow-x-auto">
                <table class="w-full">
                <thead>
                    <tr class="text-xs font-semibold tracking-wide text-left uppercase border-b dark:border-gray-700 text-gray-400 bg-gray-800">
-                   <th class="px-4 py-3">#</th>
-                   <th class="px-4 py-3">Kode Registrasi</th>
-                   <th class="px-4 py-3">Tgl. Terima</th>
-                   <th class="px-4 py-3">Pemilik</th>
-                   <th class="px-4 py-3">Chat</th>
-                   <th class="px-4 py-3">Nama Barang</th>
-                   <th class="px-4 py-3">Kelengkapan</th>
-                   <th class="px-4 py-3">Kerusakan</th>
-                   <th class="px-4 py-3">Status</th>
-                   <th class="px-4 py-3">Aksi</th>
+                   <th class="px-4 py-3">Hari</th>
+                   <th class="px-4 py-3">Tanggal</th>
+                   <th class="px-4 py-3">Barang Servis Masuk</th>
+                   <th class="px-4 py-3">Barang Servis Selesai</th>
+                   <th class="px-4 py-3">Barang Servis Keluar</th>
+                   <th class="px-4 py-3">Total Pemasukan (Rp)</th>
                    </tr>
                </thead>
+
                <tbody class="divide-y divide-gray-700 dark:bg-gray-800 bg-gray-700">
                    <tr class="dark:bg-gray-800 dark:hover:bg-gray-900 text-gray-300 dark:text-gray-400">
-                   <td class="px-4 py-3 text-sm">1</td>
-                   <td class="px-4 py-3 text-sm">0129529192</td>
-                   <td class="px-4 py-3 text-sm">15-01-2021</td>
-                   <td class="px-4 py-3 text-sm">Hans burger</td>
-                   <td class="px-4 py-3 text-sm items-center">
-                    <div class="px-2 py-2 items-center">
-                        <a href="" class="relative inline-flex transititext-primary text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600" data-te-toggle="tooltip" title="whatsapp">
-                            <img src="img/homeicon/whatsapp.svg" alt="" class="w-5 h-5">
-                        </a>
-                    </div>
-                   </td>
-                   <td class="px-4 py-3 text-sm">iPhone 7</td>
-                   <td class="px-4 py-3 text-sm">Unit</td>
-                   <td class="px-4 py-3 text-sm">LCD Retak</td>
-                   <td class="px-4 py-3 text-xs">
-                       <span class="px-3 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-xl dark:bg-blue-700 dark:text-green-100"> Baru </span>
-                   </td>
-                   <td class="px-4 py-3 text-xs">
-                    <button class="text-gray-100 bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg px-2 py-2 text-center mr-2">Proses</button>
-                    <button class="text-gray-100 bg-gradient-to-br from-gray-300 to-red-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg px-2 py-2 text-center mr-2">Hapus</button>
-                   </td>
+                   <td class="px-4 py-3 text-sm">Senin</td>
+                   <td class="px-4 py-3 text-sm">10 april 2023</td>
+                   <td class="px-4 py-3 text-sm">3 barang</td>
+                   <td class="px-4 py-3 text-sm">5 barang</td>
+                   <td class="px-4 py-3 text-sm">1 barang</td>
+                   <td class="px-4 py-3 text-sm">Rp. 2.500.000</td>
                    </tr>
-                   
-               </tbody>
+               
+               
+                <tr class="dark:bg-gray-800 dark:hover:bg-gray-900 text-gray-300 dark:text-gray-400">
+                <td class="px-4 py-3 text-sm">Selasa</td>
+                <td class="px-4 py-3 text-sm">11 april 2023</td>
+                <td class="px-4 py-3 text-sm">2 barang</td>
+                <td class="px-4 py-3 text-sm">5 barang</td>
+                <td class="px-4 py-3 text-sm">6 barang</td>
+                <td class="px-4 py-3 text-sm">Rp. 8.500.000</td>
+                </tr>
+                
+
+                <tr class="dark:bg-gray-800 dark:hover:bg-gray-900 text-gray-300 dark:text-gray-400">
+                <td class="px-4 py-3 text-sm">Rabu</td>
+                <td class="px-4 py-3 text-sm">12 april 2023</td>
+                <td class="px-4 py-3 text-sm">2 barang</td>
+                <td class="px-4 py-3 text-sm">5 barang</td>
+                <td class="px-4 py-3 text-sm">6 barang</td>
+                <td class="px-4 py-3 text-sm">Rp. 8.500.000</td>
+                </tr>
+
+                </tbody>
                </table>
            </div>
            <div class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 sm:grid-cols-9 dark:text-gray-400  dark:bg-gray-800 divide-gray-700 bg-gray-700">
