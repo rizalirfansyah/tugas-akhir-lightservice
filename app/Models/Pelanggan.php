@@ -16,6 +16,7 @@ class Pelanggan extends Model
         'kode_pelanggan',
         'nama_pelanggan',
         'notelp',
+        'alamat',
         'proses_servis',
         'bisa_diambil',
         'sudah_diambil',

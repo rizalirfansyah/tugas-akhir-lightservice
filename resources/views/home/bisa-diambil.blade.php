@@ -6,6 +6,7 @@
 
 <div class="h-screen ml-14 mb-10 md:ml-64">
 
+    <h2 class="text-3xl mt-4 items-center text-center text-gray-400">Barang Dapat di Ambil</h2>
     <div class="flex justify-between">
     {{-- Search bar --}}
         <form class="flex items-center pt-4 space-x-1 ml-3">
