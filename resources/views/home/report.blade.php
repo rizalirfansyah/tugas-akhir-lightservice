@@ -39,6 +39,7 @@
     </div>
 
     {{-- Tabel data report harian --}}
+
        <div class="mt-0.5 mx-4">
            <div class="w-full overflow-hidden rounded-lg shadow-xs">
            <div class="w-full overflow-x-auto">
@@ -85,6 +86,7 @@
                 </tr>
 
                 </tbody>
+
                </table>
            </div>
            <div class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 sm:grid-cols-9 dark:text-gray-400  dark:bg-gray-800 divide-gray-700 bg-gray-700">
