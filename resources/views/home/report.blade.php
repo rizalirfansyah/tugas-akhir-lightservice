@@ -1,4 +1,4 @@
-<title>Light Service | Terima Servis</title>
+<title>Light Service | Data Pendapatan</title>
 
 <x-app-layout>
 

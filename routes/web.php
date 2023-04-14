@@ -37,6 +37,7 @@ Route::middleware([
     Route::get('/home.terima-servis', [HomeController::class, 'view_terima'])->name('home.terima-servis')->middleware('auth');
     Route::get('/home.report', [HomeController::class, 'view_report'])->name('home.report')->middleware('auth');
     Route::get('/register', [LoginController::class, 'register'])->name('register');
+    Route::get('/home.data-pegawai', [HomeController::class, 'view_datapegawai'])->name('home.data-pegawai')->middleware('auth');
 
     Route::resource('pelanggan', PelangganController::class);
 });

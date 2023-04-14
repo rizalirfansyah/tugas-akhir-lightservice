@@ -78,7 +78,7 @@ class PelangganController extends Controller
      */
     public function update(UpdatePelangganRequest $request, Pelanggan $pelanggan)
     {
-        DB::table('pelanggan')->update($request->validated());
+        $pelanggan->update($request->validated());
 
         return redirect()->route('pelanggan.index')
             ->with('success', 'berhasil update!');

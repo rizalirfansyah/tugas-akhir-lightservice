@@ -52,4 +52,9 @@ class HomeController extends Controller
     {
         return view('home.report');
     }
+
+    public function view_datapegawai()
+    {
+        return view('home.data-pegawai');
+    }
 }

@@ -25,12 +25,12 @@
     
         {{-- Sorting dan tambah pelanggan --}}
         <div class="flex items-center mr-5 ml-2.5">
-            <button type="button" class="p-1.5 lg:p-2.5 -ml-2 bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            <button class="p-1.5 lg:p-2.5 -ml-2 bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="h-5 w-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0l-3.75-3.75M17.25 21L21 17.25"></path>
                 </svg>
             </button>
-            <button type="button" class="inline-flex p-1 lg:p-2.5 ml-2 bg-gray-400 rounded-lg border border-blue-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-700 dark:bg-blue-600 dark:hover:bg-gray-700 dark:focus:ring-blue-800 text-xs lg:text-sm md:text-sm sm:text-xs">Tambah
+            <button class="inline-flex p-1 lg:p-2.5 ml-2 bg-gray-400 rounded-lg border border-blue-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-blue-700 dark:bg-blue-600 dark:hover:bg-gray-700 dark:focus:ring-blue-800 text-xs lg:text-sm md:text-sm sm:text-xs text-gray-300">Tambah
                 <img src="img/homeicon/add.svg" alt="" class="ml-1 h-5 w-4"></button>
         </div>
     
@@ -42,7 +42,7 @@
            <div class="w-full overflow-x-auto">
                <table class="w-full">
                <thead>
-                   <tr class="text-xs font-semibold tracking-wide text-left uppercase border-b dark:border-gray-700 text-gray-400 bg-gray-800">
+                   <tr class="text-xs font-semibold tracking-wide text-left uppercase border-b border-gray-700 text-gray-400 bg-gray-800">
                    <th class="px-4 py-3">#</th>
                    <th class="px-4 py-3">Kode Registrasi</th>
                    <th class="px-4 py-3">Tgl. Terima</th>
@@ -55,8 +55,8 @@
                    <th class="px-4 py-3">Aksi</th>
                    </tr>
                </thead>
-               <tbody class="divide-y divide-gray-700 dark:bg-gray-800 bg-gray-700">
-                   <tr class="dark:bg-gray-800 dark:hover:bg-gray-900 text-gray-300 dark:text-gray-400">
+               <tbody class="divide-y divide-gray-700 bg-gray-700">
+                   <tr class="bg-gray-800 hover:bg-gray-900 text-gray-400">
                    <td class="px-4 py-3 text-sm">1</td>
                    <td class="px-4 py-3 text-sm">0129529192</td>
                    <td class="px-4 py-3 text-sm">15-01-2021</td>
@@ -83,7 +83,7 @@
                </tbody>
                </table>
            </div>
-           <div class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 sm:grid-cols-9 dark:text-gray-400  dark:bg-gray-800 divide-gray-700 bg-gray-700">
+           <div class="grid px-4 py-3 text-xs font-semibold tracking-wide uppercase border-t border-gray-700 sm:grid-cols-9 text-gray-400 divide-gray-700 bg-gray-800">
                <span class="flex items-center col-span-3"></span>
                <span class="col-span-2"></span>
                <!-- Pagination -->
