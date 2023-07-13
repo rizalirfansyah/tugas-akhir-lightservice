@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/n1576199/public_html/
+    - /bin/cp resources\views\layouts\app.blade.php $DEPLOYPATH
+    - /bin/cp resources\css\app.css $DEPLOYPATH
+    - /bin/cp -r $DEPLOYPATH
