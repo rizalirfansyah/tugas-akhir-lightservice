@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pelanggan;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\StorePelangganRequest;
 use App\Http\Requests\UpdatePelangganRequest;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\DB;
+use App\Models\Repair;
 
 class PelangganController extends Controller
 {
@@ -15,10 +17,18 @@ class PelangganController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request) 
     {
-        $pelanggan = DB::table('pelanggan')
-        ->paginate(20);
+        
+        if($request->has('search')){
+            $pelanggan = Pelanggan::where('nama_pelanggan', 'LIKE', '%' .$request->search. '%')
+            ->orWhere('notelp', 'like', '%' .$request->search. '%')
+            ->paginate(10);
+        } else {
+            $pelanggan = DB::table('pelanggan')
+            ->latest('id')->paginate(10);
+        }
+
         return view('home.pelanggan')
         ->with('pelanggan', $pelanggan);
     }
@@ -93,9 +103,33 @@ class PelangganController extends Controller
      */
     public function destroy(Pelanggan $pelanggan)
     {
-        $pelanggan->delete();
+        $hasPelanggan = Repair::where('pelanggan_id', $pelanggan->id)->exists();
 
-        return redirect()->route('pelanggan.index')
-        ->with('success', 'berhasil menghapus data!');
+            // Periksa apakah ada relasi data yang masih terkait dengan pelanggan
+            if ($hasPelanggan) {
+                return redirect()->route('pelanggan.index')
+                    ->with('error', 'Tidak dapat menghapus data karena memiliki keterhubungan dengan transaksi yang ada.');
+            }
+    
+            // Jika tidak ada relasi data yang terkait, hapus data pelanggan
+            $pelanggan->delete();
+    
+            return redirect()->route('pelanggan.index')
+                ->with('success', 'Berhasil menghapus data!');
     }
+
+    public function redirectToWhatsapp($phoneNumber)
+    {
+        $message = 'Halo kami dari light service!'; // Ganti dengan pesan yang ingin Anda kirim
+
+        // Menambahkan kode negara Indonesia jika tidak dimulai dengan "+62"
+        if (!str_starts_with($phoneNumber, '+62')) {
+            $phoneNumber = '+62' . ltrim($phoneNumber, '0');
+        }
+
+        $url = 'https://api.whatsapp.com/send?phone=' . $phoneNumber . '&text=' . urlencode($message);
+
+        return redirect()->away($url)->withHeaders(['target' => '_blank']);
+    }
+
 }

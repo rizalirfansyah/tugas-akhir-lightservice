@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Controllers\RepairController;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,9 +18,15 @@ class Pelanggan extends Model
         'nama_pelanggan',
         'notelp',
         'alamat',
-        'proses_servis',
-        'bisa_diambil',
-        'sudah_diambil',
-        'total_servis',
-    ]; 
+    ];
+
+    public function repair(){
+        return $this->hasMany(Repair::class, 'id', 'pelanggan_id');
+    }
+
+    public function transaksi(){
+        return $this->hasMany(Transaksi::class, 'id', 'pelanggan_id');
+    }
+
+    
 }

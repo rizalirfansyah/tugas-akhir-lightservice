@@ -8,7 +8,11 @@ module.exports = {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         "./src/**/*.{html,js}",
-        "./node_modules/tw-elements/dist/js/**/*.js"
+      "./node_modules/tw-elements/dist/js/**/*.js",
+      "./resources/**/*.blade.php",
+      "./resources/**/*.js",
+      "./resources/**/*.vue",
+      "./node_modules/flowbite/**/*.js"
     ],
 
     theme: {
@@ -33,7 +37,8 @@ module.exports = {
                   '0%, 100%' : { transform: 'rotate (-3deg)'},
                   '50%': {transform: 'rotate(3deg)'},
                 }
-            }
+            },
+            darkMode: false,
         },
     },
 
@@ -42,4 +47,5 @@ module.exports = {
     require("daisyui"),
     require('flowbite/plugin'),
     require("tw-elements/dist/plugin")],
+  darkMode: "class"
 };

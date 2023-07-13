@@ -5,6 +5,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PelangganController;
+use App\Http\Controllers\RepairController;
+use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\WhatsappController;
+use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,18 +34,29 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    Route::get('/home.dashboard', [LoginController::class, 'index'])->name('home.dashboard')->middleware('auth');
-    // Route::get('/home.pelanggan', [HomeController::class, 'view_pelanggan'])->name('home.pelanggan')->middleware('auth');
-    Route::get('/home.proses-servis', [HomeController::class, 'view_proses'])->name('home.proses-servis')->middleware('auth');
-    Route::get('/home.bisa-diambil', [HomeController::class, 'view_ambil'])->name('home.bisa-diambil')->middleware('auth');
-    Route::get('/home.sudah-diambil', [HomeController::class, 'view_sudahambil'])->name('home.sudah-diambil')->middleware('auth');
-    Route::get('/home.terima-servis', [HomeController::class, 'view_terima'])->name('home.terima-servis')->middleware('auth');
-    Route::get('/home.report', [HomeController::class, 'view_report'])->name('home.report')->middleware('auth');
-    Route::get('/register', [LoginController::class, 'register'])->name('register');
-    Route::get('/home.data-pegawai', [HomeController::class, 'view_datapegawai'])->name('home.data-pegawai')->middleware('auth');
+    Route::get('/dashboard', [HomeController::class, 'index'])->name('dashboard')->middleware('is_admin');
+    // Route::get('/pendapatan/{date?}', [TransaksiController::class, 'pendapatan'])->name('home.report')->middleware('is_admin');
+    Route::get('/pembayaran', [TransaksiController::class, 'index_pembayaran'])->name('home.pembayaran')->middleware('is_admin');
+    Route::get('/komentar', [RepairController::class, 'showComment'])->name('home.komentar')->middleware('is_admin');
 
     Route::resource('pelanggan', PelangganController::class);
+    Route::get('/redirect-whatsapp/{phoneNumber}', [PelangganController::class, 'redirectToWhatsapp'])->name('redirect.whatsapp');
+    Route::resource('repairs', RepairController::class);
+    Route::resource('users', UserController::class)->middleware('is_admin');
+    Route::resource('transaksi', TransaksiController::class);
+    Route::get('/cetak-nota/{transaksi}', [TransaksiController::class, 'cetaktagihan'])->name('cetaknota.pdf');
+    Route::get('/cetak-pendapatan', [TransaksiController::class, 'cetakpendapatan'])->name('cetakpendapatan');
+    Route::get('/cetak-pembayaran', [TransaksiController::class, 'pdfpembayaran'])->name('pdfpembayaran');
+    // Route::get('/cetak-pdf/{id}', [TransaksiController::class, 'cetaktagihan'])->name('cetak.pdf');
+
+    // membatasi register jetstream agar
+    Route::get('/register', [RegisteredUserController::class, 'create'])
+        ->middleware(['is_admin'])
+        ->name('register');
+    Route::post('/register', [RegisteredUserController::class, 'store'])
+        ->middleware(['is_admin']);
 });
 
-Route::get('/register', [LoginController::class, 'register'])->name('register');
-// Route::get('/redirects', 'App\Http\Controllers\LoginController@index')->middleware('auth');
+Route::post('/status', [RepairController::class, 'addComment'])->name('comment-status');
+Route::get('/contact.us', [HomeController::class, 'view_contactus'])->name('contact.us');
+Route::get('/check-status', [RepairController::class, 'getStatus'])->name('check.status');
