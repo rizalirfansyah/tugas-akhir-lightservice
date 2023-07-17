@@ -138,11 +138,17 @@ class RepairController extends Controller
         $repair = Repair::where('nomor_servis', '=', $keyword)
             ->latest()->get();
         
-        if($repair->isEmpty()) {
+        if ($repair->isEmpty()) {
             $errorMessage = 'Data tidak ditemukan';
             return view('landing.check-status', compact('errorMessage', 'repair'));
         } else {
-            return view('landing.status-gadget', compact('repair'));
+            $status = $repair->first()->status; // Mendapatkan status reparasi pertama dalam koleksi
+            if ($status === 'batal') {
+                $errorMessage = 'Reparasi telah dibatalkan';
+                return view('landing.check-status', compact('errorMessage', 'repair'));
+            } else {
+                return view('landing.status-gadget', compact('repair'));
+            }
         }
     }
 

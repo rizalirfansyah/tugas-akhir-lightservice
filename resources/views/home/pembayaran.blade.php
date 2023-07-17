@@ -13,7 +13,7 @@
            {{-- Search bar --}}
                <form class="flex items-center pt-4 space-x-1 ml-3">
                    <label for="simple-search" class="sr-only">Search</label>
-                   <div class="relative w-32 lg:w-96 md:w-80 sm:w-72">
+                   <div class="relative w-32 lg:w-96 md:w-80 sm:w-40">
                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                            <svg aria-hidden="true" class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
                        </div>
@@ -146,7 +146,7 @@
                        <th class="px-4 py-3">Nama Pelanggan</th>
                        <th class="px-4 py-3">Nomor Servis</th>
                        <th class="px-4 py-3">Tanggal Masuk</th>
-                       <th class="px-4 py-3">Tanggal Ambil</th>
+                       <th class="px-4 py-3">Tanggal Selesai</th>
                        <th class="px-4 py-3">Jenis Gadget</th>
                        <th class="px-4 py-3">Tipe Gadget</th>
                        <th class="px-4 py-3">Biaya</th>
@@ -161,7 +161,7 @@
                         <td class="px-4 py-3">{{ $transaction->pelanggan->nama_pelanggan }}</td>
                         <td class="px-4 py-3">{{ $transaction->repair->nomor_servis }}</td>
                         <td class="px-4 py-3">{{ $transaction->tgl_transaksi }}</td>
-                        <td class="px-4 py-3">{{ $transaction->tgl_ambil }}</td>
+                        <td class="px-4 py-3">{{ date('Y-m-d', strtotime($transaction->updated_at)) }}</td>
                         <td class="px-4 py-3">{{ $transaction->repair->jenis_gadget }}</td>
                         <td class="px-4 py-3">{{ $transaction->repair->tipe_gadget }}</td>
                         <td class="px-4 py-3">Rp. {{ number_format($transaction->harga, 0, ',', '.') }}</td>

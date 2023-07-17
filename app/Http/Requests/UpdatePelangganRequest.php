@@ -32,10 +32,19 @@ class UpdatePelangganRequest extends FormRequest
 
         return [
             'nama_pelanggan' => 'required|regex:/^[a-zA-Z0-9\s]+$/',
-            'notelp' => 'required',
+            'notelp' => 'required|digits_between:10,13',
             'different:pelanggan,notelp,' . $id . ',id',
             Rule::unique('pelanggan')->ignore($id, 'id'),
             'alamat' => 'required|regex:/^[a-zA-Z0-9\s]+$/',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'notelp.required' => 'Nomor telepon harus diisi.',
+            'notelp.numeric' => 'Nomor telepon harus berupa angka.',
+            'notelp.digits_between' => 'Nomor telepon harus memiliki panjang antara :min sampai :max digit.',
         ];
     }
 

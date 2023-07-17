@@ -52,7 +52,7 @@
       </div>
       
       @foreach($repair as $item)
-      <ol class="relative text-gray-500 border-l border-gray-200 dark:border-gray-700 dark:text-gray-400 mt-36 space-y-14 w-96"> 
+      <ol class="relative border-l border-gray-700 text-gray-400 mt-36 space-y-14 w-96"> 
   
           <li class="{{ $item->status==='daftar' || $item->status==='pengecekan' || $item->status==='perbaikan' || $item->status==='selesai' ? 'mb-14 ml-6' : 'hidden' }}">
               <span class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -left-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
@@ -85,7 +85,17 @@
               <h3 class="ml-2 font-medium text-xl leading-tight">Selesai</h3>
               <p class="ml-2 text-lg">Gadget anda telah selesai diperbaiki oleh pihak LightService</p>
           </li>
+
+          <div class="{{ $item->status==='batal' ? 'mb-14 ml-6' : 'hidden' }}">
+            <span class="absolute flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full -left-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+                <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
+            </span>
+            <h3 class="ml-2 font-medium text-xl leading-tight">batal</h3>
+            <p class="ml-2 text-lg">Gadget anda batal diperbaiki pihak LightService</p>
+          </div>
+
       </ol>
+
       @endforeach
     </div>
 

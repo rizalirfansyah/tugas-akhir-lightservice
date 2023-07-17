@@ -63,10 +63,20 @@ class TransaksiController extends Controller
      */
     public function store(StoreTransaksiRequest $request)
     {
+        // Mengambil nilai status dari tabel repair berdasarkan id yang diberikan dalam request
+        $repairStatus = DB::table('repairs')->where('id', $request->perbaikan_id)->value('status');
+
+        // Memeriksa apakah status pada tabel repair adalah 'batal'
+        if ($repairStatus === 'batal') {
+            return redirect()->route('transaksi.index')
+                ->with('error', 'Tidak dapat menambah data karena status perbaikan adalah batal');
+        }
+
+        // Jika status tidak batal, maka data akan ditambahkan ke tabel transaksi
         DB::table('transaksi')->insert($request->validated());
 
         return redirect()->route('transaksi.index')
-            ->with('success', 'berhasil menambah tagihan');
+            ->with('success', 'Berhasil menambah tagihan');
     }
 
     /**

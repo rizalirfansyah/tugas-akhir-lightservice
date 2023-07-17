@@ -13,7 +13,7 @@
            {{-- Search bar --}}
                <form class="flex items-center pt-4 space-x-1 ml-3">
                    <label for="simple-search" class="sr-only">Search</label>
-                   <div class="relative w-32 lg:w-96 md:w-80 sm:w-72">
+                   <div class="relative w-32 lg:w-96 md:w-80 sm:w-40">
                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                            <svg aria-hidden="true" class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
                        </div>
@@ -51,7 +51,7 @@
                                    @method('POST')
                                    <div>
                                     <label for="perbaikan_id" class="block mb-2 text-sm font-medium text-white">Perbaikan</label>
-                                    <select id="perbaikan_id" name="perbaikan_id" class="select2 w-96 border text-sm rounded-lg block p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">
+                                    <select id="perbaikan_id" name="perbaikan_id" class="select2 w-80 border text-sm rounded-lg block p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">
                                         <option selected disabled>Pilih</option>
                                         @foreach ($repair->reverse() as $perbaikan)
                                         <option value="{{ $perbaikan->id }}" data-pelanggan-id="{{ $perbaikan->pelanggan->id }}">{{ $perbaikan->pelanggan->nama_pelanggan }} - {{ $perbaikan->nomor_servis }} - {{ $perbaikan->pelanggan->notelp }} - {{ $perbaikan->tipe_gadget }}</option>
@@ -89,7 +89,7 @@
                                     </div>
                                     </div>
                                    
-                                   <button class="w-full text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">Tambah</button>
+                                   <button class="w-full text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">Simpan</button>
                                </form>
                            </div>
                        </div>
@@ -173,11 +173,11 @@
                                                         <label for="nomor_servis" class="block mb-2 text-sm font-medium text-white">Nomor Servis</label>
                                                         <input type="text" name="nomor_servis" id="nomor_servis" placeholder="0812-3456-7890" class="border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white" disabled value="{{ $transaction->repair->nomor_servis }}">
                                                     </div>
-                                                    <div>
+                                                    <div hidden>
                                                         <label for="tgl_transaksi" class="block mb-2 text-sm font-medium text-white">Tanggal Masuk</label>
                                                         <input type="date" name="tgl_transaksi" id="tgl_transaksi" placeholder="Jalan Ketintang, Surabaya" class="border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white" disabled value="{{ $transaction->tgl_transaksi }}">
                                                     </div>
-                                                    <div>
+                                                    <div hidden>
                                                         <label for="tgl_ambil" class="block mb-2 text-sm font-medium text-white">Tanggal Ambil</label>
                                                         <input type="date" name="tgl_ambil" id="tgl_ambil" placeholder="Jalan Ketintang, Surabaya" class="border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white" disabled value="{{ $transaction->tgl_ambil }}">
                                                     </div>
@@ -243,7 +243,7 @@
                                                             @method('delete')
                                                             <button class="mt-3 ml-1 px-2 py-2 text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm text-center bg-red-600 hover:bg-red-700 focus:ring-red-800">Hapus</button>
                                                         </form>
-                                                        <button class=" ml-1 px-2 py-2 text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800" data-modal-hide="hapus-cust-modal{{ $transaction->id }}">Kembali</button>
+                                                        <button class="ml-1 px-2 py-2 text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800" data-modal-hide="hapus-cust-modal{{ $transaction->id }}">Kembali</button>
                                                     </div>
                                                 </div>
                                             </div>

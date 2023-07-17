@@ -54,7 +54,7 @@
                     <td style="padding: 0px 5px; line-height: 20px;">{{ $transaksi->repair->pelanggan->nama_pelanggan }}</td>
                     <td style="padding: 0px 5px; line-height: 20px;">{{ $transaksi->repair->nomor_servis }}</td>
                     <td style="padding: 0px 5px; line-height: 20px;">{{ $transaksi->tgl_transaksi }}</td>
-                    <td style="padding: 0px 5px; line-height: 20px;">{{ $transaksi->tgl_ambil }}</td>
+                    <td style="padding: 0px 5px; line-height: 20px;">{{ date('Y-m-d', strtotime($transaction->updated_at)) }}</td>
                     <td style="padding: 0px 5px; line-height: 20px;">{{ $transaksi->repair->jenis_gadget }}</td>
                     <td style="padding: 0px 5px; line-height: 20px;">{{ $transaksi->repair->tipe_gadget }}</td>
                     <td style="padding: 0px 5px; line-height: 20px;">Rp. {{ number_format($transaksi->harga, 0, ',', '.') }}</td>
@@ -64,14 +64,14 @@
         </tbody>
 
         <tfoot>
-            <td class="padding: 0px 5px;"></td>
-            <td class="padding: 0px 5px;"></td>
-            <td class="padding: 0px 5px;"></td>
-            <td class="padding: 0px 5px;"></td>
-            <td class="padding: 0px 5px;"></td>
-            <td class="padding: 0px 5px;"></td>
-            <td class="padding: 0px 5px; line-height: 20px;">Total</td>
-            <td class="padding: 0px 5px; line-height: 20px;">Rp. {{  number_format($total_transaksi, 0, ',', '.')  }}</td>
+            <td class="padding: 0px 5px;" style="border:none;"></td>
+            <td class="padding: 0px 5px;" style="border:none;"></td>
+            <td class="padding: 0px 5px;" style="border:none;"></td>
+            <td class="padding: 0px 5px;" style="border:none;"></td>
+            <td class="padding: 0px 5px;" style="border:none;"></td>
+            <td class="padding: 0px 5px;" style="border:none;"></td>
+            <td class="padding: 0px 5px;" style="text-align: left;">Total</td>
+            <td class="padding: 0px 5px;" style="text-align: left;">Rp. {{  number_format($total_transaksi, 0, ',', '.')  }}</td>
         </tfoot>
     </table>
 

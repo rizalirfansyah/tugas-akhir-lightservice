@@ -106,7 +106,7 @@
                         <td style="padding: 0px; line-height: 20px;">
                             Check perbaikan gadget anda melalui website kami!
                             <br>
-                            Kunjungi website kami di <strong> www.lightservice.id </strong>
+                            Kunjungi website kami di <strong> https://light-service.space </strong>
                         </td>
                     </tr>
                 </table>

@@ -15,7 +15,7 @@
             {{-- Search bar --}}
             <form class="flex items-center pt-4 space-x-1 ml-3">
                 <label for="simple-search" class="sr-only">Search</label>
-                <div class="relative w-32 lg:w-96 md:w-80 sm:w-72">
+                <div class="relative w-32 lg:w-96 md:w-80 sm:w-40">
                     <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
                         <svg aria-hidden="true" class="w-5 h-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
                     </div>
@@ -148,24 +148,30 @@
                                                 <input type="text" name="name" id="name" class="border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white" required value="{{ old('name', $datapegawai->name) }}">
                                             </div>
                                             <div>
-                                                <label for="alamat" class="block mb-2 text-sm font-medium text-white">Nama</label>
+                                                <label for="alamat" class="block mb-2 text-sm font-medium text-white">Alamat</label>
                                                 <input type="text" name="alamat" id="alamat" class="border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white" required value="{{ old('alamat', $datapegawai->alamat) }}">
                                             </div>
                                             <div>
-                                                <label for="notelp" class="block mb-2 text-sm font-medium text-white">Nama</label>
-                                                <input type="text" name="notelp" id="notelp" class="border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white" required value="{{ old('notelp', $datapegawai->notelp) }}">
+                                                <label for="notelp" class="block mb-2 text-sm font-medium text-white">Notelp</label>
+                                                <input type="number" name="notelp" id="notelp" class="border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white" required value="{{ old('notelp', $datapegawai->notelp) }}">
+                                                @error('notelp')
+                                                    <span class="text-red-100">{{ $message }}</span>
+                                                @enderror
                                             </div>
                                             <div>
-                                                <label for="email" class="block mb-2 text-sm font-medium text-white">Nama</label>
+                                                <label for="email" class="block mb-2 text-sm font-medium text-white">Email</label>
                                                 <input type="text" name="email" id="email" class="border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white" required value="{{ old('email', $datapegawai->email) }}">
                                             </div>
                                             <div>
                                                 <label for="is_admin" class="block mb-2 text-sm font-medium text-white">Role</label>
                                                 <select id="is_admin" name="is_admin" class="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500">
-                                                    <option selected>Pilih</option>
-                                                    <option value="1">Admin</option>
+                                                    @if (($datapegawai->is_admin ==1))
+                                                    <option selected value="1">Admin</option>
                                                     <option value="0">Pegawai</option>
-                                                       
+                                                  @else
+                                                    <option selected value="0">Pegawai</option>
+                                                    <option value="1">Admin</option>
+                                                  @endif
                                                 </select>
                                             </div>
                                             
@@ -198,9 +204,9 @@
                                                 <form action="{{ route('users.destroy', $datapegawai->id ) }}" method="POST">
                                                     @csrf
                                                     @method('delete')
-                                                    <button class="mt-3 ml-1 px-2 py-2 text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm text-center bg-red-600 hover:bg-red-700 focus:ring-red-800">Hapus</button>
+                                                    <button class="mt-4 ml-1 px-2 py-2 text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm text-center bg-red-600 hover:bg-red-700 focus:ring-red-800">Hapus</button>
                                                 </form>
-                                                <button class=" ml-1 px-2 py-2 text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800" data-modal-hide="hapus-cust-modal{{ $datapegawai->id }}">Kembali</button>
+                                                <button class="ml-1 px-2 py-2 text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800" data-modal-hide="hapus-cust-modal{{ $datapegawai->id }}">Kembali</button>
                                             </div>
                                         </div>
                                     </div>

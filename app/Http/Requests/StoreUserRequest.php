@@ -31,7 +31,7 @@ class StoreUserRequest extends FormRequest
             'password' => 'required',
             'is_admin' => 'nullable',
             'notelp' => 'required|unique:users|digits_between:10,13',
-            'alamat' => 'required',
+            'alamat' => 'required|regex:/^[a-zA-Z0-9\s]+$/',
         ];
     }
     

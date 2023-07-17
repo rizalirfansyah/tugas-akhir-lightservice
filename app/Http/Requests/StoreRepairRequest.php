@@ -33,7 +33,7 @@ class StoreRepairRequest extends FormRequest
         'tanggal_masuk' => 'required',
         'kelengkapan' => 'required|regex:/^[a-zA-Z0-9,\s]+$/',
         'kerusakan' => 'required|regex:/^[a-zA-Z0-9,\s]+$/',
-        'password' => 'required|regex:/^[a-zA-Z0-9\s]+$/',
+        'password' => 'required|regex:/^[a-zA-Z0-9\s-]+$/',
         'status' => 'nullable|regex:/^[a-zA-Z0-9\s]+$/',
         'comments' => 'nullable|regex:/^[a-zA-Z0-9\s]+$/|max:100',
         ];

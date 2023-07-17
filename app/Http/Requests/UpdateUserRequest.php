@@ -26,12 +26,21 @@ class UpdateUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'nullable',
-            'email' => 'nullable',
+            'name' => 'nullable|regex:/^[a-zA-Z0-9\s]+$/',
+            'email' => 'nullable|unique:users',
             'password' => 'nullable',
             'is_admin' => 'nullable',
-            'notelp' => 'nullable',
-            'alamat' => 'nullable',
+            'notelp' => 'nullable|digits_between:10,13',
+            'alamat' => 'nullable|regex:/^[a-zA-Z0-9\s]+$/',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'notelp.required' => 'Nomor telepon harus diisi.',
+            'notelp.numeric' => 'Nomor telepon harus berupa angka.',
+            'notelp.digits_between' => 'Nomor telepon harus memiliki panjang antara :min sampai :max digit.',
         ];
     }
 

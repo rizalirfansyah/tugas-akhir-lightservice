@@ -93,6 +93,10 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request, User $user)
     {
+        if ($user->id === auth()->user()->id) {
+            return redirect()->back()->with('error', 'Tidak dapat edit user yang sedang login.');
+        }
+
         $user->update($request->validated());
 
         return redirect()->route('users.index')
